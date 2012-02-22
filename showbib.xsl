@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE xsl:stylesheet  [
 	<!ENTITY nbsp   "&#160;">
-	<!ENTITY squo "&#145;">
+	<!ENTITY squo    "&#145;">
 	<!ENTITY copy   "&#169;">
 	<!ENTITY reg    "&#174;">
 	<!ENTITY trade  "&#8482;">
 	<!ENTITY mdash  "&#8212;">
 	<!ENTITY ldquo  "&#8220;">
-	<!ENTITY rdquo  "&#8221;"> 
+	<!ENTITY rdquo  "&#8221;">
 	<!ENTITY pound  "&#163;">
 	<!ENTITY yen    "&#165;">
 	<!ENTITY euro   "&#8364;">
