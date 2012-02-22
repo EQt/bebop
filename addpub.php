@@ -47,11 +47,12 @@ else if (isset($_POST['regenerate']))
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" dir="ltr">
 <head>
-<title>Add a publication</title>
+  <title>Add a publication</title>
   <link href="site.css" rel="stylesheet" type="text/css" />
-<script src="addpub.js" type="text/javascript"></script>
+  <script src="addpub.js" type="text/javascript"></script>
 </head>
 <body style="margin:10px">
+  <div class="bebop">
 
 <?php
 if (isset($_POST['submit']) )
@@ -170,6 +171,6 @@ If the full text document is not on the server, <a href="javascript:openUploadPu
 			 <input type="submit" name="regenerate" id="regenerate" value="Regenerate" />
 			 </div>
 			 </form>
-			 
+  </div>
 </body>
 </html>
