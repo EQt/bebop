@@ -2,7 +2,9 @@
 include_once("functions.inc.php");
 include_once("bebop.conf.inc.php");
 
-$action=$_GET["action"];
+if(isset($_GET["action"]))
+  $action=$_GET["action"];
+
 ?>
 
 <div class="bebop">

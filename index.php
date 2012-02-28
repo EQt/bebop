@@ -2,9 +2,20 @@
 include_once("functions.inc.php");
 include_once("bebop.conf.inc.php");
 
-$action=$_GET["action"];
-$by=$_GET["by"];
-$pub=$_GET["pub"];
+if(isset($_GET["action"]))
+  $action=$_GET["action"];
+else
+  $action=null;
+
+if(isset($_GET["by"]))
+  $by=$_GET["by"];
+else
+  $by=null;
+
+if(isset($_GET["pub"]))
+  $pub=$_GET["pub"];
+else
+  $pub=null;
 
 print "<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"

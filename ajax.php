@@ -2,9 +2,14 @@
 include_once("functions.inc.php");
 include_once("bebop.conf.inc.php");
 
-$action=$_GET["action"];
-$by=$_GET["by"];
-$pub=$_GET["pub"];
+if(isset($_GET["action"]))
+  $action=$_GET["action"];
+
+if(isset($_GET["by"]))
+  $by=$_GET["by"];
+
+if(isset($_GET["pub"]))
+  $pub=$_GET["pub"];
 
 if($action != null)
   {

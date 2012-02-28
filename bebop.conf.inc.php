@@ -31,7 +31,7 @@ $START_YEAR = 2001;
 
 // Style of the publication filtering menu. Possible values: "HORIZONTAL", "VERTICAL"
 // Prefer horizontal if the year list is too long. The default value is vertical.
-// $MENU_STYLE = "HORIZONTAL";
+$MENU_STYLE = "VERTICAL";
 
 // MANDATORY: Menu matrix - comment out the rows to exclude.
 $MENU = array(
@@ -57,6 +57,7 @@ $MENU = array(
 // relative path to external css from bebop home directory
 //$EXTERNAL_CSS="../../css/stylesheet.css";
 
-include_once("user.conf.inc.php");
+if (file_exists("user.conf.inc.php"))
+  include_once("user.conf.inc.php");
 
 ?>
