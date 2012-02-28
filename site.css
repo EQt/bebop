@@ -151,7 +151,6 @@ body {
 	left: 48px; 
 	top:3px;
 	width: 720px;
-	text-align: right;
 	visibility: visible; /*hidden;*/
 }
 
@@ -427,4 +426,8 @@ div.sociable { margin: 0px 0; }
     opacity: 1;
     -moz-opacity: 1;
     filter: alpha(opacity=100);
+}
+
+#bibentryform input {
+    width: 500px;
 }

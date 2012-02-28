@@ -292,3 +292,8 @@ function deleteBib(pub)
     xmlHttp.open("GET",url,true)
     xmlHttp.send(null)
 }
+
+function editBib(pub)
+{
+    window.location.href = "editpub.php?pub="+pub;
+}

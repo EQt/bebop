@@ -50,6 +50,7 @@ else if (isset($_POST['regenerate']))
   <title>Add a publication</title>
   <link href="site.css" rel="stylesheet" type="text/css" />
   <script src="addpub.js" type="text/javascript"></script>
+  <?php print "<link rel=\"shortcut icon\" href=\"$FAVICON\"/>" ?>
 </head>
 <body style="margin:10px">
   <div class="bebop">

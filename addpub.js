@@ -1,8 +1,32 @@
 var sf;
 var nsf;
+var val = new Array();
 
 function showForm(entrytype)
-{    
+{
+    // safe old values
+    if (sf)
+    {
+        for (var i = 0; i < sf.length; i++)
+        {
+            var el = sf[i];
+            var element = document.getElementById(el)
+            if (element && element.value != "")
+                val[el] = element.value;
+        }
+    }
+
+    if (nsf)
+    {
+        for (var i = 0; i < nsf.length; i++)
+        {
+            var el = nsf[i];
+            var element = document.getElementById(el)
+            if (element && element.value != "")
+                val[el] = element.value;
+        }
+    }
+
     var formHTML = "";
     //alert("showForm called!");
     
@@ -68,19 +92,22 @@ function showForm(entrytype)
 
     for(var i = 0; i<sf.length; i++)
 	{
+        value = val[sf[i]] ? val[sf[i]] : "";
 		formHTML += "<label for=\"" + sf[i] + "\">" + sf[i] + "(*)";
 		if(sf[i] == "author")
 			formHTML += " (e.g. John Doe and Jane Doe and Jim Doe)";
 		formHTML += "</label><br />";
-	    formHTML += "<input type=\"text\" name=\"" + sf[i] + "\" id=\"" + sf[i] + "\"  style=\"width:400px;\" value=\"\" /><br /><br />";
+	    formHTML += "<input type=\"text\" name=\"" + sf[i] + "\" id=\"" + sf[i] + "\"  value=\"" + value + "\" /><br /><br />";
+
 	}
     for(var i = 0; i<nsf.length; i++)
 	{
+        value = val[nsf[i]] ? val[nsf[i]] : "";
 		formHTML += "<label for=\"" + nsf[i] + "\">" + nsf[i];
 		if(nsf[i] == "month")
 			formHTML += " (e.g. March 14-20)";
 		formHTML += "</label><br />";
-	    formHTML += "<input type=\"text\" name=\"" + nsf[i] + "\" id=\"" + nsf[i] + "\"  style=\"width:400px;\" value=\"\" /><br /><br />";
+	    formHTML += "<input type=\"text\" name=\"" + nsf[i] + "\" id=\"" + nsf[i] + "\" value=\"" + value + "\" /><br /><br />";
 	}
     
     document.getElementById("entryform").innerHTML = formHTML;
@@ -154,4 +181,28 @@ function returnFilelinkAndClose( strFilelink )
     window.opener.document.bibentryform.filelink.value = strFilelink;
     //genBib2(window.opener.document);
     window.close();
+}
+
+
+function selectEntrtype(etype)
+{
+    var opts = document.getElementById('entrytype');
+    var oe;
+    for (var i = 0; i < opts.length; i++)
+    {
+        if (opts[i].value == etype)
+        { oe = opts[i]; break; }
+    }
+    oe.selected = true;
+}
+
+function showExtendedFields()
+{
+    var extfs = ["keywords", "abstract", "filelink", "researcharea"];
+    for (var i in extfs)
+    {
+        var f = extfs[i];
+        if (val[f] && document.getElementById(f))
+            document.getElementById(f).value = val[f];
+    }
 }

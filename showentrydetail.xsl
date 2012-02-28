@@ -101,6 +101,7 @@
           <xsl:if test="$allowedit='1'">
             <div class="deletbtn">
               <form>
+                <input value="edit" type="button" onclick="editBib('{@name}')" />
                 <input value="delete" type="button" onclick="deleteBib('{@name}')" />
               </form>
             </div>
