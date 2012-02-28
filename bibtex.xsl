@@ -202,7 +202,7 @@
 
 
 <xsl:variable name="count" select="count($query)"/>
-<div class="total">Total: <xsl:value-of select="$count" /></div>
+<div id="total">Total: <xsl:value-of select="$count" /></div>
 
 <xsl:for-each select="$query">
 <xsl:sort select="*[name()=$sortype]" order="descending"/>
@@ -214,7 +214,7 @@
 
 
 <!-- Paper box -->
-<div class="entry1">
+<div class="entry1" id="entry{@name}">
 
 <xsl:choose>
 	<xsl:when test="entrytype='mastersthesis' and substring-after(@name, substring-before(@name,'MS'))='MS'">

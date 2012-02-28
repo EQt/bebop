@@ -18,6 +18,8 @@
 <xsl:param name="pubid">371690</xsl:param>
 <xsl:param name="bebophome">http</xsl:param>
 <xsl:param name="bebopembeddingurl">http</xsl:param>
+<!-- Should the user be allowed to edit/delete this entry (see necessary buttons)?-->
+<xsl:param name="allowedit">1</xsl:param>
 
 <xsl:template match="/">
 
@@ -94,8 +96,16 @@
 
 				</td>
 				</tr>
+			</table>
 
-			</table>		
+          <xsl:if test="$allowedit='1'">
+            <div class="deletbtn">
+              <form>
+                <input value="delete" type="button" onclick="deleteBib('{@name}')" />
+              </form>
+            </div>
+          </xsl:if>
+
 </xsl:template>
 <!-- /printEntryDetails -->
 

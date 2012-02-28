@@ -11,6 +11,8 @@ setup: bootstrap
 	chmod 777 bibtex.bib
 	touch newpub.bib
 	chmod 777 newpub.bib
+	touch deleted.bib
+	chmod 777 deleted.bib
 	mkdir -p abstracts
 	chmod 777 -R abstracts/
 	chmod 777 abstracts

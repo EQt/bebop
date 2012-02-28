@@ -151,7 +151,7 @@ body {
 	left: 48px; 
 	top:3px;
 	width: 720px;
-	text-align: justify;
+	text-align: right;
 	visibility: visible; /*hidden;*/
 }
 
@@ -163,6 +163,15 @@ body {
     border: none;
     text-align: justify;
 }
+
+.bebop .entrybody .deletbtn {
+    text-align: right;
+}
+
+.bebop .entrybody .deletbtn input {
+    margin: 0 0 0 7px;
+}
+
 .bebop .entrybody ul {
 	padding: 0px;
 	margin-left: 15px;
@@ -285,7 +294,7 @@ body {
 .bebop .bigLinks a:hover {text-decoration:underline;}
 .bebop .authorListLinks a {text-decoration:none;padding:0px;color:#000000;}
 
-.bebop .total {
+.bebop #total {
 	text-decoration:none;
 	padding:0px;
 	color:#000000;

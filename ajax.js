@@ -249,3 +249,46 @@ function doSearch()
 
     showCategory('searchtitle', query.toLowerCase());
 }
+
+
+function deleteBib(pub)
+{
+    xmlHttp=GetXmlHttpObject()
+    if (xmlHttp==null)
+    {
+        alert ("Browser does not support HTTP Request");
+        return;
+    }
+
+    var url=bebop_home_dir+"deletepub.php?pub=" + pub
+
+    xmlHttp.onreadystatechange=function () {
+        if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+        {
+            var r = xmlHttp.responseText;
+            if (r == "1")
+            {
+                // delete entry-Element
+                var e = document.getElementById("entry"+pub);
+                var p = e.parentNode;
+                p.removeChild(e);
+                // decrease "Total" count
+                var t = document.getElementById('total');
+                var tv = t.innerHTML.split(" ");
+                t.innerHTML = tv[0] + " " + (tv[1] - 1);
+            }
+            else
+            {
+                document.getElementById("entry"+pub).innerHTML
+                    = '<strong style="color: red;">Error: </strong>' + r.replace("\n", "\n<br />  ");
+            }
+        }
+        else
+        {
+            document.getElementById("entry"+pub).innerHTML=loadingMessage
+        }
+    }
+
+    xmlHttp.open("GET",url,true)
+    xmlHttp.send(null)
+}
