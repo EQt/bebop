@@ -115,6 +115,7 @@ function showForm(entrytype)
 
 function genBib2(documentt)
 {
+    var indent = '  ';
     var bibcode;
     var entrytype = documentt.bibentryform.entrytype.value;
     var entryname = documentt.bibentryform.entryname.value;
@@ -129,22 +130,22 @@ function genBib2(documentt)
     for(var i=0; i<sf.length; i++)
 	{
 	    //	    if(document.getElementById(sf[i]).value != '')
-		bibcode += "\t" + sf[i] + "= \"{" + documentt.getElementById(sf[i]).value + "}\",\n";
+		bibcode += indent + sf[i] + "= \"{" + documentt.getElementById(sf[i]).value + "}\",\n";
 	}
     for(var i=0; i<nsf.length; i++)
 	{
 	    if(documentt.getElementById(nsf[i]).value != '')
-		bibcode += "\t" + nsf[i] + "= \"{" + documentt.getElementById(nsf[i]).value + "}\",\n";    
+		bibcode += indent + nsf[i] + "= \"{" + documentt.getElementById(nsf[i]).value + "}\",\n";    
 	}
 
     //if(abstract != '')
-	bibcode += "\tabstract = \"{" + abstract + "}\",\n";
+	bibcode += indent + "abstract = \"{" + abstract + "}\",\n";
     //if(keywords != '')
-	bibcode += "\tkeywords = \"{" + keywords + "}\",\n";
+	bibcode += indent + "keywords = \"{" + keywords + "}\",\n";
     if(filelink != '')
-	bibcode += "\tfilelink = \"{" + filelink + "}\",\n";
+	bibcode += indent + "filelink = \"{" + filelink + "}\",\n";
     //if(researcharea != '')
-	bibcode += "\tresearcharea = \"{" + researcharea + "}\"\n";
+	bibcode += indent + "researcharea = \"{" + researcharea + "}\"\n";
     bibcode += "}\n";
 
     //var htmlbibcode = bibcode.replace(/(?:\n\r|\n|\r)/g, '<br />');
